@@ -1,9 +1,7 @@
 const Offer = require('../models/Offer');
 const Request = require('../models/Request');
-const {sendNotification} = require('../controllers/notificationCreateService');
 const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
-const { notificationAdminService } = require('./notificationAdminService');
 const { User } = require('../models/user');
 
 exports.create = async (req, res) => {
@@ -33,16 +31,6 @@ exports.create = async (req, res) => {
     const users = await User.findById(to_id);
     const myUser = await User.findById(userId);
 
-
-    await notificationAdminService({
-      user: userId,
-      description_sp: `${myUser?.fname + " " + myUser?.lname} ha enviado una nueva solicitud de Trabajo a ${users?.fname + " " + users?.lname}`,
-      title_sp:lang2["newapp"],
-      description_en: `${myUser?.fname + " " + myUser?.lname} has sent a new job application to ${users?.fname + " " + users?.lname}`,
-      title_en:lang["newapp"],
-      type: "request",
-      request:request._id,
-    });
     
     await request.save();
 
