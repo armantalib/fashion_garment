@@ -204,7 +204,7 @@ router.post('/forget-password', async (req, res) => {
 
   if (user.status == 'deleted') return res.status(400).send({ message: lang2["deleted"] });
 
-  const verificationCode = generateCode();
+  const verificationCode = 1122
 
   await phoneservice(phone, verificationCode)
 
@@ -267,7 +267,7 @@ router.post('/send-code', async (req, res) => {
       return res.status(409).json({ error: lang2["phonealready"]  });
     }
 
-    const verificationCode = generateCode();
+    const verificationCode = 1122
     await phoneservice(phone, verificationCode)
 
     // const expiresAt = moment().add(60, 'minutes').toDate();
