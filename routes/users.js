@@ -206,7 +206,7 @@ router.post('/forget-password', async (req, res) => {
 
   const verificationCode = 1122
 
-  await phoneservice(phone, verificationCode)
+  // await phoneservice(phone, verificationCode)
 
   await User.findOneAndUpdate({ phone }, { code: verificationCode });
 
@@ -267,8 +267,8 @@ router.post('/send-code', async (req, res) => {
       return res.status(409).json({ error: lang2["phonealready"]  });
     }
 
-    const verificationCode = 1122
-    await phoneservice(phone, verificationCode)
+    const verificationCode = 1122;
+    // await phoneservice(phone, verificationCode)
 
     // const expiresAt = moment().add(60, 'minutes').toDate();
     const existingTempUser = await TempUser.findOne({ phone });
