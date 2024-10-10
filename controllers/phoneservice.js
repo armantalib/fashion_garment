@@ -2,9 +2,9 @@ const twilio = require('twilio');
 const logger = require('../startup/logger'); // Adjust the path as needed
 
 // Replace these with your actual Twilio credentials
-const accountSid = '';
-const authToken = '';
-const client = new twilio(accountSid, authToken);
+const accountSid = 'ddd';
+const authToken = 'ddd';
+const client = '';
 
 
 exports.phoneservice = async (phone, code) => {

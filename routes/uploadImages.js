@@ -7,9 +7,9 @@ const mime = require('mime-types');
 const fs = require('fs');
 const sharp = require('sharp');
 
-const admin = require("firebase-admin");
+// const admin = require("firebase-admin");
 
-const bucket = admin.storage().bucket();
+const bucket = ''
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
