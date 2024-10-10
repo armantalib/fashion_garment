@@ -29,18 +29,6 @@ exports.create = async (req, res) => {
       return res.status(404).json({ message: req?.user?.lang=='english'?lang["jobnot"]:lang2["jobnot"] });
     }
 
-    await sendNotification({
-      user : userId,
-      to_id : to_id,
-      description_sp : `${lang2["jobnewappl"]} "${updateJob.title}" ${lang2["job"]}`,
-      title_sp :lang2["newapp"],
-      description_en : `${lang["jobnewappl"]} "${updateJob.title}" ${lang["job"]}`,
-      title_en :lang["newapp"],
-      type :'request',
-      fcmtoken : updateJob?.user?.fcmtoken,
-      request:request._id,
-      noti:updateJob?.user?.noti
-    })
 
     const users = await User.findById(to_id);
     const myUser = await User.findById(userId);

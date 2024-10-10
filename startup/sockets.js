@@ -74,17 +74,7 @@ module.exports = function (server) {
 
         const otherUser = await User.findById(recipientId)
 
-        await sendNotification({
-          user : senderId,
-          to_id : recipientId,
-          description_sp :  `@${name} te envié un mensaje: ${messageText}`,
-          title_sp :"Nuevo mensaje",
-          description_en :  `@${name} sent you a message: ${messageText}`,
-          title_en :"New Message",
-          type :'message',
-          fcmtoken :otherUser?.fcmtoken,
-          noti: otherUser?.noti
-      })
+   
 
       } catch (error) {
         console.error('Error sending private message:', error.message);
