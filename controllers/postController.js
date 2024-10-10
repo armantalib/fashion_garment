@@ -1,7 +1,7 @@
 const Gig = require('../models/Gig');
 const like = require('../models/like');
 const { User } = require('../models/user');
-const lang2 = require('../routes/lang2.json');
+const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
 const logger = require('../startup/logger');
 

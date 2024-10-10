@@ -5,7 +5,7 @@ const Transaction = require("../models/Transaction");
 const Wallet = require("../models/Wallet");
 const { User } = require("../models/user");
 const { sendNotification } = require("./notificationCreateService");
-const lang2 = require('../routes/lang2.json');
+const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
 const { notificationAdminService } = require("./notificationAdminService");
 const Request = require("../models/Request");
@@ -40,50 +40,8 @@ exports.create = async (req, res) => {
       seen: false,
     });
 
-    await sendNotification({
-      user: to_id,
-      to_id: userId,
-      description_en: lang["offersub"],
-      description_sp: lang2["offersub"],
-      type: "order",
-      title_en: lang["offerSubmitted"],
-      title_sp: lang2["offerSubmitted"],
-      fcmtoken: "",
-      order: application._id,
-      noti: false,
-    });
     const users = await User.findById(to_id);
     const myUser = await User.findById(userId);
-
-    await sendNotification({
-      user: userId,
-      to_id: to_id,
-      description_en: `${lang["offerfo"]} ${
-        myUser.fname + " " + myUser.lname
-      }`,
-      description_sp: `${lang2["offerfo"]} ${
-        myUser.fname + " " + myUser.lname
-      }`,
-      type: "order",
-      title_en:lang["neworder"],
-      title_sp:lang2["neworder"],
-      fcmtoken: users.fcmtoken,
-      order: application._id,
-      noti: users.noti,
-    });
-    await notificationAdminService({
-      user: userId,
-      description_en: `${users.fname + " " + users.lname}  have received a new offer from ${
-        myUser.fname + " " + myUser.lname
-      }`,
-      title_en:lang["neworder"],
-      description_sp: `${users.fname + " " + users.lname} He recibido una nueva oferta de ${
-        myUser.fname + " " + myUser.lname
-      }`,
-      title_sp:lang2["neworder"],
-      type: "order",
-      order: application._id,
-    });
 
     await application.save();
 

@@ -2,7 +2,7 @@ const Joi = require('joi');
 const bcrypt = require('bcryptjs');
 const { User, generateAuthToken } = require('../models/user');
 const express = require('express');
-const lang2 = require('./lang2.json');
+const lang2 = require('./lang.json');
 const logger = require('../startup/logger');
 const router = express.Router();
 

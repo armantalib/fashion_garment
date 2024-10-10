@@ -1,5 +1,5 @@
 const Category = require('../models/Category');
-const lang2 = require('../routes/lang2.json');
+const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
 
 exports.create = async (req, res) => {

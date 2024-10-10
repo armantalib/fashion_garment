@@ -18,7 +18,7 @@ const Gig = require('../models/Gig');
 const Offer = require('../models/Offer');
 const Request = require('../models/Request');
 const BankDetail = require('../models/BankDetail');
-const lang2 = require('./lang2.json');
+const lang2 = require('./lang.json');
 const lang = require('./lang.json');
 const { phoneservice } = require('../controllers/phoneservice');
 

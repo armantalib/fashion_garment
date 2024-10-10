@@ -1,7 +1,7 @@
 const Gig = require('../models/Gig');
 const Rating = require('../models/Rating');
 const { User } = require('../models/user');
-const lang2 = require('../routes/lang2.json');
+const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
 
 function calculateAverage(initialValue, numberToAdd) {

@@ -1,7 +1,7 @@
 const Offer = require('../models/Offer');
 const Request = require('../models/Request');
 const {sendNotification} = require('../controllers/notificationCreateService');
-const lang2 = require('../routes/lang2.json');
+const lang2 = require('../routes/lang.json');
 const lang = require('../routes/lang.json');
 const { notificationAdminService } = require('./notificationAdminService');
 const { User } = require('../models/user');

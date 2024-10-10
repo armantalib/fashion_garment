@@ -1,7 +1,7 @@
 const express = require('express');
 const { default: axios } = require('axios');
 const router = express.Router();
-const lang2 = require('./lang2.json');
+const lang2 = require('./lang.json');
 const lang = require('./lang.json');
 
 const CCLW='04704CB103DA6FEF16EA2E089D0D1D51AC61E61270F394ACEB33030A1D4C71D5F7F1E17C40E75EDDA2FD4A4D4B2A6E17F8E42C8F33A2924F83115340D4FEFDFF';
